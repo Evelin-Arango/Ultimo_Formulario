@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario con validacion avanzada</title>
+    <link rel="stylesheet" href="_css/styles.css">
+    <script src="_js/jd.js"></script>
+    
+</head>
+
+<body>
+   
+    <div class="container">
+        <h1> 🚀 Formulario Avanzado</h1>
+
+        <!--barra de progreso-->
+        <div class="progreso-formulario">
+            <div class="barra-progreso" id="barraProgreso"></div>
+        </div>
+        <p style="text-align: center; color: #000000; margin-bottom: 30px;">
+            progreso: <span id="porcentajeprogreso">0%</span>
+        </p>
+
+   <!--form-->
+        <form id = "FormularioAvanzado" novalidate>
+        <!--nombre con validacion en tiempo real-->
+         <div class="form-group">
+                <label for="nombreCompleto">Nombres *</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required autofocus
+                    placeholder="mínimo 2 nombres" />
+                <div class="mensaje-error" id="errorNombre"></div>
+                <div class="mensaje-exito" id="exitoNombre"></div>
+            </div>
+              <div class="form-group">
+        <label for="apellidoCompleto">Apellidos *</label>
+        <input type="text" id="apellidoCompleto" name="apellidoCompleto" required placeholder="Mínimo 2 palabras">
+        <div class="mensaje-error" id="errorApellido"></div>
+        <div class="mensaje-exito" id="exitoApellido"></div>
+      </div>
+          <!--email con validacion personalizada-->
+        <div class="form-group">
+            <label for="correo">correo electronico *</label>
+            <input
+            type="email"
+            id="correo"
+            name="correo"
+            required
+            placeholder="usuario@dominio.com" 
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{5,50}$"/>
+            <div
+            class="mensaje-error"
+            id="errorCorreo"></div>
+            <div
+            class="mensaje-exito"
+            id="exitoCorreo"></div>
+        </div>
+
+           <!--contraseña con indicador de fortaleza-->
+        <div class="form-group">
+            <label for="password">contraseña *</label>
+           <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="minimo 8 caracteres" 
+            minlength="10"
+            onpaste="return false"/>
+            <div
+            class="password-strength"
+            id="strengthBar"></div>
+            <div
+            class="mensaje-error"
+            id="errorPassword"></div>
+            <div
+            class="mensaje-exito"
+            id="exitoPassword"></div>
+        </div>
+
+        
+           <!--confirmacion de contraseña -->
+        <div class="form-group">
+            <label for="confirmarPassword">confirmar contraseña *</label>
+            <input
+            type="password"
+            id="confirmarPassword"
+            name="confirmarPassword"
+            required
+            placeholder="repite tu contraseña" />
+            <div
+            class="mensaje-error"
+            id="errorConfirmar"></div>
+            <div
+            class="mensaje-exito"
+            id="exitoConfirmar"></div>
+        </div>
+
+        
+           <!--telefono con formato-->
+        <div class="form-group">
+            <label for="telefono">telefono *</label>
+            <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            required
+            placeholder="300-123-4567" 
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+            <div
+            class="mensaje-error"
+            id="errorTelefono"></div>
+            <div
+            class="mensaje-exito"
+            id="exitoTelefono"></div>
+        </div>
+
+          <!--fecha de nacimiento-->
+        <div class="form-group">
+            <label for="fechaNacimiento">fecha de nacimiento*</label>
+            <input
+            type="date"
+            id="fechaNacimiento"
+            name="fechaNacimiento"
+            required />
+            <div
+            class="mensaje-error"
+            id="errorFecha"></div>
+            <div
+            class="mensaje-exito"
+            id="exitoFecha"></div>
+        </div>
+
+          <!--comentarios con contenedor-->
+        <div class="form-group">
+            <label for="comentarios">comentarios*</label>
+            <textarea
+            id="comentarios"
+            name="comentarios"
+            rows="4"
+            maxlength="500"
+            placeholder="Cuentanos sobre ti (maximo 500 caracteres)" ></textarea>
+            <div style="text-align: right;">
+            <span id="contadorComentarios">0</span>/500 caracteres 
+        </div>
+        </div>
+
+          <!--terminos y condiciones-->
+        <div class="form-group">
+            <input
+            type="checkbox"
+            id="terminos"
+            name="terminos"
+            required />
+            <label
+            for="terminos"
+            style="display: inline; margin-left: 8px;">
+        Acepto los terminos y condiciones *
+    </label>
+            <div
+            class="mensaje-error"
+            id="errorTerminos">
+        </div>
+
+        <button
+            type="submit"
+            id="btnEnviar"
+            disabled>
+       📤 Enviar Formulario
+    </button> 
+        </form>
+
+
+
+
+
+</body>
+
+</html>
